@@ -11,7 +11,7 @@ pub struct Parts<'a, T> {
 impl<'a, T> Parts<'a, T> {
     #[inline]
     pub fn new(slice: &'a [T], n_parts: usize) -> Self {
-        if slice.len() < n_parts {
+        if slice.len() <= n_parts {
             // optimize trivial case
             Self {
                 slice,

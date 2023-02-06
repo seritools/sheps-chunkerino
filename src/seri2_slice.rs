@@ -14,7 +14,7 @@ impl<'a, T> Parts<'a, T> {
         let chunk_size = slice.len() / n_parts;
         let times_extra = slice.len() % n_parts;
 
-        if slice.len() < n_parts {
+        if slice.len() <= n_parts {
             Self {
                 slice,
                 chunk_size_small: 1,
